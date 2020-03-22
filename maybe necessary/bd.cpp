@@ -1,13 +1,41 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
-    // Comparing ASCII values of a and b
-    cout << std::max('a','b') << "\n";
+    int i,t,j;
 
-    // Returns the first one if both the numbers
-    // are same
-    cout << std::max(102,100);
+    cout << "XOR:" << endl;
+    for(i = 0; i <= 10; i++)
+        cout << setw(4) << i;
+    cout << endl;
+    for(i=1;i<=10;i++)
+    {
+        cout << setw(4) << i;
+        for(t=1;t<=10;t++)
+            cout<< setw(4) << (i^t);
+        cout << endl;
+    }
 
-return 0;
+    cout << "AND:" << endl;
+    for(i = 0; i <= 10; i++)
+        cout << setw(4) << i;
+    cout << endl;
+    for(i=1;i<=10;i++)
+    {
+        cout << setw(4) << i;
+        for(t=1;t<=10;t++)
+            cout<< setw(4) << (i&t);
+        cout << endl;
+    }
+        cout << "OR:" << endl;
+    for(i = 0; i <= 10; i++)
+        cout << setw(4) << i;
+    cout << endl;
+    for(i=1;i<=10;i++)
+    {
+        cout << setw(4) << i;
+        for(t=1;t<=10;t++)
+            cout<< setw(4) << (i|t);
+        cout << endl;
+    }
 }

@@ -1,12 +1,21 @@
-#include<stdio.h>
-int main()
-{
-    int a,b,c,d;
-    scanf("%d %d",&a,&b);
-    c=a;
-    d=b;
-    b=c;
-    a=d;
-    printf("%d %d",a,b);
-    return 0;
+#include <stdio.h>
+int divisible(long long int n) {
+   long long int temp = n;
+   // check if any of digit divides n
+   while (n) {
+      int k = n % 10;
+      if (temp % k == 0)
+         return 1;
+         n /= 10;
+   }
+   return 0;
+}
+int main() {
+   long long int n = 654123;
+   if (divisible(n)==0) {
+      printf("Yes\n");
+   }
+   else
+      printf("No\n");
+   return 0;
 }

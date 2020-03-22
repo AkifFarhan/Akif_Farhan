@@ -2,8 +2,8 @@
 using namespace std;
 int main()
 {
-    int a;
-
-    a =10 ^ 1;
-    cout<<a;
+    int i;
+    cin>>i;
+    cout<<"25"<<endl;
+    return 0;
 }
