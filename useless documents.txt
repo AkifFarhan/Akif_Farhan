@@ -1,0 +1,15 @@
+Zombie Messiah
+
+Begining:-
+Computer Programming 1st part -tamim shahriar subeen
+
+to learn more(like pointer,structure,file,recurtion etc):-
+Computer Programming 2nd part -tamim shahriar subeen
+
+STL(to take idea about the topic):-
+youtube: STL bangla playlist(20 videos)
+
+Binary search:-
+1.subeen binary search(finished .right?)
+2. Binary Search PDF by Md. Tahmid Rahman Laskar IUT ‘11(source is unknown)
+3.youtube : mycodeschool binary search videos
