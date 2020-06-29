@@ -3,30 +3,24 @@ using namespace std;
 
 int main()
 {
-    int i;
-    int n;
-    cin>>n;
-  vector<int>v;
-  vector<int>::iterator it;
-  for(int i=0;i<n;i++)
+    int t;
+    cin>>t;
+    while(t--)
     {
-        int k;
-        cin>>k;
-        v.push_back(k);
-    }
-//    for(int i=0;i<n;i++)
-//    {
-//       vector<int>::iterator it;
-//      it = v.begin() + i;
-//       if(*it%2==1)
-//      {
-//        //cout<<*it<<endl;
-//        v.erase(v.begin() + i);
-//      }
-//    }
-v.erase(v.begin()+0);
+        long long int x1,y1,x2,y2;
+        cin>>x1>>y1>>x2>>y2;
 
-     for (it = v.begin();it != v.end(); it++) {
-        cout << *it << " ";
+        if(x2<x1)
+        swap(x1,x2);
+        long long int ans = ((x2-x1)/2) + x1;
+
+       cout<<ans;
+
+       if((x2-x1) % 2 == 1)
+        cout<<".5 ";
+        else
+            cout<<" ";
+       cout<<y1<<endl;
     }
 }
+

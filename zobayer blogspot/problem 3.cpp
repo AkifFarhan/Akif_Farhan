@@ -1,28 +1,33 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int i=0;
+int a[100000];
+int n;
 
-void remove_odds(int a[],int n)
+int rec(int i,int j)
 {
-    if(n!=0)
+    if(j==n)
+        return i;
+    if(a[j]%2==0)
     {
-        int k;
-        cin>>k;
-        if(k%2==0)
-        {
-            a[i]=k;
-            i++;
-        }
-        remove_odds(a,n-1);
+        a[i]=a[j];
+        i++;
+        j++;
     }
+    else
+        j++;
+    rec(i,j);
 }
+
 int main()
 {
-    int n;
     cin>>n;
-    int a[n];
-    remove_odds(a,n);
-    for(int j=0;j<i;j++)
-        cout<<a[j]<<" ";
+    int i;
+    for(i=0;i<n;i++)
+        cin>>a[i];
+
+    n=rec(0,0);
+
+    for(i=0;i<n;i++)
+        cout<<a[i]<<" " ;
 }

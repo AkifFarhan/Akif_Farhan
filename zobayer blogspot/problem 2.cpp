@@ -1,22 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int i;
-void reverse(int a[],int n)
+int a[100000];
+int n;
+
+void reverse(int i)
 {
-    if(n<=i)
+    if(n-i<=i)
         return;
-    cout<<a[i]<<" "<<a[n-1]<<endl;
-    i++;
-    reverse(a,n-1);
+    cout<<a[i]<<" "<<a[n-i-1]<<endl;
+    reverse(i+1);
 }
 
 int main()
 {
-    int n;
     cin>>n;
-    int a[n];
-    for(int i=0;i<n;i++)
+    int i;
+    for(i=0;i<n;i++)
         cin>>a[i];
-    reverse(a,n);
+    reverse(0);
 }
