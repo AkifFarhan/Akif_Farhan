@@ -21,30 +21,31 @@ int main()
     cin>>t;
     for(int j=1;j<=t;j++)
     {
+
+        map<char,int>mp;
         string s;
         cin>>s;
+
         cout<<"Case "<<j<<": ";
 
         int i,z=s.size(),co=0,l=0;
 
-        s[z]='@';
-
         for(i=0;i<z;i++)
         {
-            co++;
-            if(s[i+1] != s[i])
-            {
-                if( prime(co) == 1 )
-                {
-                    cout<<s[i];
-                    l=1;
-                }
-                co=0;
-            }
+            mp[s[i]]++;
         }
 
-        if(l==0)
-            cout<<"empty";
-        cout<<endl;
+            for(auto u : mp)
+            {
+                if( prime(u.second) == 1)
+                {
+                    cout<<u.first;
+                    l=1;
+                }
+            }
+
+    if(l==0)
+         cout<<"empty";
+     cout<<endl;
     }
 }

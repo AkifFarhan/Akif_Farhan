@@ -1,14 +1,69 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define N 1000001
+
+bool flag[N];
+vector<int> primes;
+
+void sieve()
+{
+    int i, j;
+
+    flag[0] = flag[1] = 1;
+    for(i = 4; i < N; i += 2)
+        flag[i] = 1;
+
+    for(i = 3; i * i < N; i+=2)
+    {
+        if(!flag[i])
+        {
+            for(j = i*i; j < N; j += 2*i)
+                flag[j] = 1;
+        }
+    }
+
+    for(i = 2; i < N; i++)
+    {
+        if(!flag[i])
+            primes.push_back(i);
+    }
+}
+
+
+
+
 int main()
 {
-    int a,b,j;
-    cin>>a>>b;
-    for(j=0;;j++)
+    sieve();
+    int n;
+    while(cin>>n && n)
     {
-                if((a+j)%b==0)
-                break;
-                }
-    cout<<j;
-    return 0;
+        int pow , res = 1;
+        double logn = log(n);
+
+        pow=(int)(logn/log(2))-(int)(logn/log(5));
+        while(pow--)
+        {
+            res *= 2;
+            res %= 10;
+        }
+
+        pow=logn/log(3);
+        while(pow--)
+        {
+            res*=3;
+            res%=10;
+        }
+
+        for(int i=3 ; i<primes.size() && primes[i]<=n ; i++)
+        {
+            int pow=logn/log(primes[i]);
+            while(pow--)
+            {
+                res*=primes[i];
+                res%=10;
+            }
+        }
+        cout<<res<<endl;
+    }
 }
